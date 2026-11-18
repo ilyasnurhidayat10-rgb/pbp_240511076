@@ -100,7 +100,7 @@ footer {
 /* Tablet: 2 kolom untuk cards */
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   nav {
@@ -125,22 +125,36 @@ footer {
 }
 
 /* Mobile kecil: sesuaikan padding & ukuran elemen */
-@media (max-width: 480px) {
-  header {
-    padding: 24px 16px;
-  }
+/* ===== MEDIA QUERIES ===== */
 
-  h1 {
-    font-size: 1.5rem;
+/* Tablet: 2 kolom untuk cards */
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
   }
-
   nav {
-    gap: 16px;
-    font-size: 0.9rem;
+    justify-content: flex-start;
+    padding-left: 32px;
   }
+}
 
-  .foto {
-    width: 80px;
-    height: 80px;
+/* Desktop: 4 kolom untuk cards */
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
   }
+  main {
+    padding: 0 40px;
+  }
+  header {
+    padding: 60px 20px;
+  }
+}
+
+/* Mobile kecil: sesuaikan padding */
+@media (max-width: 480px) {
+  header { padding: 24px 16px; }
+  h1 { font-size: 1.5rem; }
+  nav { gap: 16px; font-size: 0.9rem; }
+  .foto { width: 80px; height: 80px; }
 }
